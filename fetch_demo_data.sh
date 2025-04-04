@@ -4,7 +4,7 @@ urle () { [[ "${1}" ]] || return 1; local LANG=C i x; for (( i = 0; i < ${#1}; i
 # SMPL Neutral model
 echo -e "\nYou need to register at https://smplify.is.tue.mpg.de"
 read -p "Username (SMPLify):" username
-read -p "Password (SMPLify):" password
+read -s -p "Password (SMPLify):" password
 username=$(urle $username)
 password=$(urle $password)
 
@@ -18,7 +18,7 @@ rm -rf dataset/body_models/smplify.zip
 # SMPL Male and Female model
 echo -e "\nYou need to register at https://smpl.is.tue.mpg.de"
 read -p "Username (SMPL):" username
-read -p "Password (SMPL):" password
+read -s -p "Password (SMPL):" password
 username=$(urle $username)
 password=$(urle $password)
 
